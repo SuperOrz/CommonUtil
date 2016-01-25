@@ -13,7 +13,14 @@ public class baseServlet extends HttpServlet  {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-			response.setContentType("text/html;charset=UTF-8");//处理响应编码
+			//处理响应编码
+			if(request.getMethod().equalsIgnoreCase("get")){
+				request = new EnhancedRequest(request);
+			}else{
+				request.setCharacterEncoding("utf-8");
+			}
+			response.setContentType("text/html;charset=UTF-8");
+			
 			String methodName = request.getMethod();
 			Method method = null;
 			try {
