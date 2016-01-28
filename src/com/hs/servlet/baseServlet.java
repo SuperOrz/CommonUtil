@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hs.filter.EnhancedRequest;
+
 public class baseServlet extends HttpServlet  {
 
 	@Override
@@ -15,7 +17,7 @@ public class baseServlet extends HttpServlet  {
 			throws ServletException, IOException {
 			//处理响应编码
 			if(request.getMethod().equalsIgnoreCase("get")){
-				request = new EnhancedRequest(request);
+				request = new EnhancedRequest(request,"utf-8");
 			}else{
 				request.setCharacterEncoding("utf-8");
 			}
