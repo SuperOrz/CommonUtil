@@ -10,49 +10,49 @@ public class TQueryRunner extends QueryRunner{
 
 	@Override
 	public int[] batch(String sql, Object[][] params) throws SQLException {
-		Connection con = jdbcUtil.getCon();
+		Connection con = JdbcUtil.getCon();
 		int[] result =  super.batch(con,sql, params);
-		jdbcUtil.realseConnection(con);
+		JdbcUtil.realseConnection(con);
 		return result;
 	}
 
 	@Override
 	public <T> T query(String sql, ResultSetHandler<T> rsh, Object... params) throws SQLException {
-		Connection con = jdbcUtil.getCon();
+		Connection con = JdbcUtil.getCon();
 		T result =  super.query(con,sql, rsh, params);
-		jdbcUtil.realseConnection(con);
+		JdbcUtil.realseConnection(con);
 		return result;
 	}
 
 	@Override
 	public <T> T query(String sql, ResultSetHandler<T> rsh) throws SQLException {
-		Connection con = jdbcUtil.getCon();
+		Connection con = JdbcUtil.getCon();
 		T result = super.query(con,sql, rsh);
-		jdbcUtil.realseConnection(con);
+		JdbcUtil.realseConnection(con);
 		return result;
 	}
 
 	@Override
 	public int update(String sql) throws SQLException {
-		Connection con = jdbcUtil.getCon();
+		Connection con = JdbcUtil.getCon();
 		int result = super.update(con,sql);
-		jdbcUtil.realseConnection(con);
+		JdbcUtil.realseConnection(con);
 		return result;
 	}
 
 	@Override
 	public int update(String sql, Object param) throws SQLException {
-		Connection con = jdbcUtil.getCon();
+		Connection con = JdbcUtil.getCon();
 		int result = super.update(con,sql, param);
-		jdbcUtil.realseConnection(con);
+		JdbcUtil.realseConnection(con);
 		return result;
 	}
 
 	@Override
 	public int update(String sql, Object... params) throws SQLException {
-		Connection con = jdbcUtil.getCon();
+		Connection con = JdbcUtil.getCon();
 		int result = super.update(con,sql, params);
-		jdbcUtil.realseConnection(con);
+		JdbcUtil.realseConnection(con);
 		return result;
 	}
 
